@@ -3,7 +3,7 @@ agileid.py
 
 ## Description
 
-AgileIds are a scoped, string-based, url-friendly format of BSON ObjectIds. A raw AgileId is a shorter string for over-the-wire data while preserving natural sortability. This is also convenient property for persistence in stores that do not support BSON.
+An AgileId is a scoped, string-based, url-friendly format of BSON ObjectIds. AgileIds are 33% shorter as strings than ObjectIds (16 characters vs 24) while preserving natural sortability. These are convenient properties for persistence in stores that do not support BSON while maintaining portability.
 
 Built and tested in environments running Python 2.6 and Python 2.7.
 
@@ -30,13 +30,14 @@ pip install agileid
 >>> print agile_id
 XXX
 
->>> object_id = bson.objectid.ObjectId()
->>> agile_id = agileid.cast('user', object_id)
+>>> agile_id = agileid.cast('user', bson.objectid.ObjectId())
 >>> print agile_id
 XXX
 
->>> object_id = agileid.to_hex_string(agile_id)
->>> print object_id
+>>> print agileid.to_hex_string(agile_id)
+XXX
+
+>>> print agileid.to_ObjectId(agile_id)
 XXX
 ```
 
