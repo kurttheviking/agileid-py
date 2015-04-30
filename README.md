@@ -48,7 +48,7 @@ Scoping is achieved through use of the `!` character. As a toy example, "user!1"
 
 The bang character (`!`) separates scope. So, the scope (`id_type`) itself cannot contain a bang character &ndash; a scope of `huzzah!` is invalid because it would result in an AgileId of `huzzah!!1`.
 
-All api methods will throw if an `id_type` is provided that contains `!`.
+All api methods will raise a `ValueError` if an `id_type` is provided that contains `!`.
 
 #### `agileid.cast(id, id_type=None)`
 
