@@ -1,8 +1,6 @@
 agileid.py
 ==========
 
-## Description
-
 An AgileId is a scoped, string-based, url-friendly format of BSON ObjectIds. AgileIds are 33% shorter as strings than ObjectIds (16 characters vs 24) while preserving natural sortability. These are convenient properties for persistence in stores that do not support BSON while maintaining portability.
 
 Built and tested in environments running Python 2.6 and Python 2.7.
@@ -136,7 +134,7 @@ XXX
 
 **Returns**
 
-A ObjectId
+An ObjectId
 
 **Example**
 
@@ -145,3 +143,16 @@ A ObjectId
 >>> print agileid.to_ObjectId(agileid.create())
 XXX
 ```
+
+## Tests
+
+To run the unit test suite from the top-level agileid directory:
+
+```
+python -m unittest discover tests
+```
+
+
+## Contribute
+
+PRs are welcome! For bugs, please include a failing test which passes when your PR is applied.
