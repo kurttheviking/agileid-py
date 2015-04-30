@@ -44,12 +44,18 @@ XXX
 
 ## API
 
-#### `agileid.cast(id, type=None)`
+Scoping is achieved through use of the `!` character. As a toy example, "user!1" would indicate scope (`id_type`) of `user` who has `id` of `1`. Scoping can be nested, such as "bigco!user!1".
+
+The bang character (`!`) separates scope. So, the scope (`id_type`) itself cannot contain a bang character &ndash; a scope of `huzzah!` is invalid because it would result in an AgileId of `huzzah!!1`.
+
+All api methods will throw if an `id_type` is provided that contains `!`.
+
+#### `agileid.cast(id, id_type=None)`
 
 **Arguments**
 
 - `id`: an AgileId, ObjectId, or String-formatted ObjectId
-- `type`: any valid String or any input that can be cast to a String
+- `id_type`: any valid String or any input that can be cast to a String
 
 **Returns**
 
@@ -64,11 +70,11 @@ An AgileId string
 XXX
 ```
 
-#### `agileid.create(type=None)`
+#### `agileid.create(id_type=None)`
 
 **Arguments**
 
-- `type`: any valid String or any input that can be cast to a String
+- `id_type`: any valid String or any input that can be cast to a String
 
 **Returns**
 
