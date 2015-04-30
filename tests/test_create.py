@@ -6,8 +6,6 @@ sys.path.insert(0, os.path.abspath('..'))
 
 import agileid
 
-# print agileid.create()
-
 
 def create_invalid_scope():
     return agileid.create('huzzah!')

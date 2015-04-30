@@ -63,16 +63,23 @@ An AgileId string
 
 ```
 >>> import agileid
->>> agile_id = agileid.cast(bson.objectid.ObjectId(), 'user')
->>> print agile_id
+>>> print agileid.cast(bson.objectid.ObjectId(), 'user')
 XXX
+```
+
+To provide safety when coercing an unknown or variable input id to an AgileId, an `id_type` that matches the highest scope will not cause "extra" scoping:
+
+```
+>>> import agileid
+>>> print agileid.cast('user!VUKMsYd-tiItmsO5', 'user')
+'user!VUKMsYd-tiItmsO5'
 ```
 
 #### `agileid.create(id_type=None)`
 
 **Arguments**
 
-- `id_type`: any valid String or any input that can be cast to a String
+- `id_type`: any String or input that can be cast to a String
 
 **Returns**
 
@@ -82,16 +89,18 @@ An AgileId string
 
 ```
 >>> import agileid
->>> agile_id = agileid.create()
->>> print agile_id
-XXX
+>>> print agileid.create()
+VUKNcId-tiJpAMRH
+
+>>> print agileid.create('user')
+user!VUKOL4d-tiJpAMRI
 ```
 
 #### `agileid.is_valid(id)`
 
 **Arguments**
 
-- `id`: A String or ObjectID
+- `id`: A String
 
 **Returns**
 
@@ -102,6 +111,9 @@ A Boolean indicating whether or not the input is a valid AgileId
 ```
 >>> import agileid
 >>> print agileid.is_valid('foo')
+False
+
+>>> print agileid.is_valid(bson.objectid.ObjectId())
 False
 
 >>> print agileid.is_valid(agileid.create())
@@ -144,12 +156,20 @@ An ObjectId
 XXX
 ```
 
+
 ## Tests
 
 To run the unit test suite from the top-level agileid directory:
 
 ```
 python -m unittest discover tests
+```
+
+Each test file provides a test case for a specific method, which can be executed in isolation if needed:
+
+```
+cd tests
+python test_create.py
 ```
 
 
