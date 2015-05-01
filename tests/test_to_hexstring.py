@@ -25,10 +25,7 @@ class Test(unittest.TestCase):
         aid = 'VUKNcId-tiJpAMRH'
         oid = '55428d70877eb6226900c447'
 
-        out = agileid.to_hexstring(aid)
-
-        self.assertEqual(len(out), 24)
-        self.assertEqual(out, oid)
+        self.assertEqual(agileid.to_hexstring(aid), oid)
 
     def test_cast_aid_scoped(self):
         aid = 'user!VUKNcId-tiJpAMRH'
