@@ -178,6 +178,13 @@ coverage report --show-missing
 ```
 
 
+## Release
+
+1. Verify test coverage is 100%
+2. Verify new `version` and `download_url` in `setup.py`
+3. Run `. _release.sh` (This tags the release on GitHub, publishes to PyPI, and updates the locally installed version)
+
+
 ## Contribute
 
 PRs are welcome! This package operates with 100% test coverage. PRs must maintain this coverage metric to be accepted.
