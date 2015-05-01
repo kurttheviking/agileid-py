@@ -163,7 +163,7 @@ To run the unit test suite from the top-level agileid directory:
 python -m unittest discover tests
 ```
 
-Each test file provides a test case for a specific method, which can be executed in isolation if needed:
+Each test file provides a test case for a specific method. To run a test case in isolation:
 
 ```
 cd tests
