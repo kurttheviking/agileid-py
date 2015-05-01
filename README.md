@@ -41,9 +41,7 @@ ObjectId('5542c6db877eb6110e83625d')
 
 ## API
 
-Scoping is delimited in an AgileId string using the `!` character. As a toy example, "user!1" would indicate scope (`id_type`) of `user` who has `id` of `1`. Scoping can be nested, such as "bigco!user!1".
-
-The bang character (`!`) separates scope. So, the scope (`id_type`) itself cannot contain a bang character &ndash; a scope of `huzzah!` is invalid because it would result in an AgileId of `huzzah!!1`.
+Scoping is delimited using the `!` character. As a toy example, "user!1" would indicate scope (`id_type`) of `user` who has `id` of `1`. Scoping can be nested, such as "bigco!user!1". The scope itself cannot contain a bang character &ndash; a scope of `huzzah!` is invalid because it would result in an AgileId of `huzzah!!1`.
 
 All api methods will raise a `ValueError` if an `id_type` is provided that contains `!`.
 
