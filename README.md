@@ -32,10 +32,10 @@ XXX
 >>> print agile_id
 XXX
 
->>> print agileid.to_hex_string(agile_id)
+>>> print agileid.to_hexstring(agile_id)
 XXX
 
->>> print agileid.to_ObjectId(agile_id)
+>>> print agileid.to_objectid(agile_id)
 XXX
 ```
 
@@ -120,7 +120,7 @@ False
 True
 ```
 
-#### `agileid.to_hex_string(id)`
+#### `agileid.to_hexstring(id)`
 
 **Arguments**
 
@@ -134,11 +134,11 @@ A String-formatted ObjectId
 
 ```
 >>> import agileid
->>> print agileid.to_hex_string(agileid.create())
+>>> print agileid.to_hexstring(agileid.create())
 XXX
 ```
 
-#### `agileid.to_ObjectId(id)`
+#### `agileid.to_objectid(id)`
 
 **Arguments**
 
@@ -152,7 +152,7 @@ An ObjectId
 
 ```
 >>> import agileid
->>> print agileid.to_ObjectId(agileid.create())
+>>> print agileid.to_objectid(agileid.create())
 XXX
 ```
 

@@ -27,12 +27,6 @@ class Test(unittest.TestCase):
     def test_invalid_oid(self):
         self.assertFalse(agileid.is_valid(ObjectId()))
 
-    # def test_invalid_id(self):
-    #     self.assertRaises(ValueError, check_invalid_id)
-
-    # def test_invalid_oid(self):
-    #     self.assertRaises(ValueError, check_invalid_oid)
-
 
 if __name__ == '__main__':
     unittest.main()
