@@ -16,6 +16,10 @@ def cast_invalid_oid():
     return agileid.cast('user!54e2a40ea60b442fff000001')
 
 
+def cast_invalid_type():
+    return agileid.cast('VOKkDqYLRC__AAAB', 'bigco!user')
+
+
 class Test(unittest.TestCase):
     def setUp(self):
         pass
@@ -62,6 +66,9 @@ class Test(unittest.TestCase):
 
     def test_cast_invalid_oid(self):
         self.assertRaises(ValueError, cast_invalid_oid)
+
+    def test_cast_invalid_type(self):
+        self.assertRaises(ValueError, cast_invalid_type)
 
 
 if __name__ == '__main__':

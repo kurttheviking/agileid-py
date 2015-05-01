@@ -170,7 +170,16 @@ cd tests
 python test_create.py
 ```
 
+To verify test coverage with [coverage](https://pypi.python.org/pypi/coverage):
+
+```
+coverage run --source agileid -m unittest discover tests
+coverage report --show-missing
+```
+
 
 ## Contribute
 
-PRs are welcome! For bugs, please include a failing test which passes when your PR is applied.
+PRs are welcome! This package operates with 100% test coverage. PRs must maintain this coverage metric to be accepted.
+
+For bugs, please include a failing test which passes when your PR is applied.
