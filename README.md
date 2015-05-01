@@ -24,19 +24,18 @@ pip install agileid
 >>> import agileid
 >>> import bson
 
->>> agile_id = agileid.create()
->>> print agile_id
-XXX
+>>> print agileid.create()
+VULGn4d-thEOg2Jb
 
->>> agile_id = agileid.cast('user', bson.objectid.ObjectId())
->>> print agile_id
-XXX
+>>> print agileid.cast(bson.objectid.ObjectId(), 'user')
+user!VULG24d-thEOg2Jd
 
->>> print agileid.to_hexstring(agile_id)
-XXX
+>>> print agileid.to_hexstring('user!VULG24d-thEOg2Jd')
+5542c6db877eb6110e83625d
 
->>> print agileid.to_objectid(agile_id)
-XXX
+>>> oid = agileid.to_objectid('user!VULG24d-thEOg2Jd')
+>>> oid
+ObjectId('5542c6db877eb6110e83625d')
 ```
 
 
@@ -64,7 +63,7 @@ An AgileId string
 ```
 >>> import agileid
 >>> print agileid.cast(bson.objectid.ObjectId(), 'user')
-XXX
+user!VULHMYd-thEOg2Je
 ```
 
 To provide safety when coercing an unknown or variable input id to an AgileId, an `id_type` that matches the highest scope will not cause "extra" scoping:
@@ -135,7 +134,7 @@ A String-formatted ObjectId
 ```
 >>> import agileid
 >>> print agileid.to_hexstring(agileid.create())
-XXX
+5542c757877eb6110e836261
 ```
 
 #### `agileid.to_objectid(id)`
@@ -152,8 +151,9 @@ An ObjectId
 
 ```
 >>> import agileid
->>> print agileid.to_objectid(agileid.create())
-XXX
+>>> oid = agileid.to_objectid(agileid.create())
+>>> oid
+ObjectId('5542c76c877eb6110e836263')
 ```
 
 
