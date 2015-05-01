@@ -2,15 +2,16 @@ from setuptools import setup
 
 
 setup(
-    description="Generate and manage AgileID identifiers",
     name='agileid',
-    url='https://github.com/kurttheviking/agileid-py',
-    version='0.0.1',
     packages=['agileid'],
+    version='0.1.0',
+    description="Generate and manage AgileID identifiers",
+    url='https://github.com/kurttheviking/agileid-py',
     author='Kurt Ericson',
     author_email='kurttheviking@outlook.com',
-    license='MIT',
-    long_description=open('README.md').read(),
+    license='ISC',
+    download_url='https://github.com/kurttheviking/agileid-py/tarball/v0.1.0',
+    keywords=['agileid', 'short objectid', 'encode objectid'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
