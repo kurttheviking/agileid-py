@@ -69,7 +69,7 @@ To provide safety when coercing an unknown or variable input id to an AgileId, a
 ```
 >>> import agileid
 >>> print agileid.cast('user!VUKMsYd-tiItmsO5', 'user')
-'user!VUKMsYd-tiItmsO5'
+user!VUKMsYd-tiItmsO5
 ```
 
 #### `agileid.create(id_type=None)`
